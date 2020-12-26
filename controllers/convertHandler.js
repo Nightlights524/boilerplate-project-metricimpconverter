@@ -83,7 +83,7 @@ function ConvertHandler() {
       default:    result = "ERROR, INVALID UNIT!"; break;
     }
     
-    return result;
+    return parseFloat(result.toFixed(5));
   };
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
