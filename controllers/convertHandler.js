@@ -14,6 +14,10 @@ function ConvertHandler() {
     const unitIndex = input.search(/[A-Za-z]/);
     let result = input.slice(0, unitIndex);
 
+    if  (result === "") {
+      return 1;
+    }
+
     if (result.includes("/")) {
       result = result.split("/");
 
@@ -24,7 +28,7 @@ function ConvertHandler() {
       result = result[0] / result[1];
     }
 
-    if (isNaN(result)) {
+    if (isNaN(result) || !isFinite(result)) {
       return false;
     }
 
