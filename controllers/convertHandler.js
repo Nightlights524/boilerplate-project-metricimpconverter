@@ -14,6 +14,16 @@ function ConvertHandler() {
     const unitIndex = input.search(/[A-Za-z]/);
     let result = input.slice(0, unitIndex);
 
+    if (result.includes("/")) {
+      result = result.split("/");
+
+      if (result.length !== 2) {
+        return false;
+      }
+
+      result = result[0] / result[1];
+    }
+
     if (isNaN(result)) {
       return false;
     }
@@ -89,7 +99,6 @@ function ConvertHandler() {
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
     return `${initNum} ${this.spellOutUnit(initUnit)} converts to ${returnNum} ${this.spellOutUnit(returnUnit)}`;
   };
-  
 }
 
 module.exports = ConvertHandler;
