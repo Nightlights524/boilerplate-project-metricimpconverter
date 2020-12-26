@@ -35,14 +35,6 @@ module.exports = function (app) {
     let returnUnit = convertHandler.getReturnUnit(initUnit);
     let string = convertHandler.getString(initNum, initUnit, returnNum, returnUnit);
       
-    // console.log("api/convert ENDPOINT HIT");
-    // console.log(`input = ${input}`);
-    // console.log(`initNum = ${initNum}`);
-    // console.log(`initUnit = ${initUnit}`);
-    // console.log(`returnNum = ${returnNum}`);
-    // console.log(`returnUnit = ${returnUnit}`);
-    // console.log(`string = ${string}`);
-
     return res.json({
       initNum,
       initUnit,
